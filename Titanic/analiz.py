@@ -14,7 +14,7 @@ pivot.plot(kind='bar', stacked=True)
  
 plt.show()
 
-# Кол-во родственников
+# По родственникам
 
 fig, axes = plt.subplots(ncols=2)
 data.pivot_table('PassengerId', ['SibSp'], 'Survived', 'count').plot(ax=axes[0], title='SibSp')
@@ -22,4 +22,9 @@ data.pivot_table('PassengerId', ['Parch'], 'Survived', 'count').plot(ax=axes[1],
 
 plt.show()
 
-# Номера кают
+# -------------
+cabinNotNullCnt = data.PassengerId[data.Cabin.notnull()].count()
+print("Cabin not null", cabinNotNullCnt)
+
+ageNotNullCnt = data.PassengerId[data.Age.notnull()].count()
+print("Age not null", ageNotNullCnt)
