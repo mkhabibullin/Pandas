@@ -10,7 +10,6 @@ mainDataFile = PATH + "/sales-funnel.xlsx"
 
 # -----------------------------------------------------------
 df = pd.read_excel(mainDataFile, "Sheet2")
-df.head()
 
 df.plot(kind='bar', x='Index', y='Price')
 plt.show()
